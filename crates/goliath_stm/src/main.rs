@@ -21,11 +21,26 @@ fn main() -> ! {
     let mut rcc = stm_peripherals.RCC.constrain();
     let mut flash = stm_peripherals.FLASH.constrain();
     let mut pwr = stm_peripherals.PWR.constrain(&mut rcc.apb1r1);
-    let clocks = rcc.cfgr.hclk(4.MHz()).freeze(&mut flash.acr, &mut pwr);
+    let clocks = rcc.cfgr.hclk(8.MHz()).freeze(&mut flash.acr, &mut pwr);
+
+    let mut gpioa = stm_peripherals.GPIOA.split(&mut rcc.ahb2);
+    let mut gpiob = stm_peripherals.GPIOB.split(&mut rcc.ahb2);
+    let mut led = gpiob
+        .pb3
+        .into_push_pull_output(&mut gpiob.moder, &mut gpiob.otyper);
+    let mut pa9 = gpioa
+        .pa9
+        .into_push_pull_output(&mut gpioa.moder, &mut gpioa.otyper);
 
     let mut timer = Delay::new(cortex_peripherals.SYST, clocks);
     loop {
-        // Sleep one second during loop
+        // Light on for one sec
+        led.set_high();
+        pa9.set_high();
+        timer.delay_ms(1000_u32);
+        // Light off for one sec
+        led.set_low();
+        pa9.set_low();
         timer.delay_ms(1000_u32);
     }
 }
