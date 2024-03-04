@@ -9,7 +9,7 @@ default = ["development"]
 development = []
 
 [dependencies]
-base64 = { version = "0.21", default-features = false, features = ["std"] }
+base64 = { version = "0.22", default-features = false, features = ["std"] }
 bincode = { version = "1.3", default-features = false }
 env_logger = { version = "0.11", default-features = false }
 futures-util = { version = "0.3", default-features = false, features = ["std"] }
