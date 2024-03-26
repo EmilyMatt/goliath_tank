@@ -973,7 +973,7 @@ dependencies = [
  "env_logger",
  "futures-util",
  "log",
- "rustls 0.23.1",
+ "rustls 0.23.4",
  "serde",
  "sha256",
  "thiserror",
@@ -1873,9 +1873,9 @@ dependencies = [
 
 [[package]]
 name = "rustls"
-version = "0.23.1"
+version = "0.23.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "e153fc89608e0515660ca656fd7f2fa05ca6690f3fd6ad1b0a46e24a8130d838"
+checksum = "8c4d6d8ad9f2492485e13453acbb291dd08f64441b6609c491f1c2cd2c6b4fe1"
 dependencies = [
  "once_cell",
  "rustls-pki-types",
@@ -2263,7 +2263,7 @@ version = "0.26.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "0c7bc40d0e5a97695bb96e27995cd3a08538541b0a846f65bba7a359f36700d4"
 dependencies = [
- "rustls 0.23.1",
+ "rustls 0.23.4",
  "rustls-pki-types",
  "tokio",
 ]
