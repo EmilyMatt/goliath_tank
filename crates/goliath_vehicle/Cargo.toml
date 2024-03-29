@@ -8,5 +8,5 @@ edition = "2021"
 [dependencies]
 goliath_common = { path = "../goliath_common" }
 log = { version = "0.4", default-features = false, features = ["std"] }
-tokio = { version = "1.36", default-features = false, features = ["macros", "rt-multi-thread", "sync"] }
+tokio = { version = "1.37", default-features = false, features = ["macros", "rt-multi-thread", "sync"] }
 tokio-tungstenite = { version = "0.21", default-features = false }
